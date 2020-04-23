@@ -32,7 +32,7 @@ import java.awt.event.KeyEvent;
  *
  * @author  root
  */
-public class MainApplet extends javax.swing.JApplet implements AssessmentListener {
+public class MainFrame extends javax.swing.JFrame implements AssessmentListener {
 
   private KeyStrokeBuffer inputFeedbackBuffer = null;
   private KeyStrokeBuffer promptBuffer = null;
@@ -610,8 +610,7 @@ public class MainApplet extends javax.swing.JApplet implements AssessmentListene
     this.promptBuffer = this.promptBuffer.shutdown();
     this.promptHistoryBuffer = this.promptHistoryBuffer.shutdown();
     System.gc();
-    
-    super.stop();
+
   }  
   
   /**
@@ -641,8 +640,7 @@ public class MainApplet extends javax.swing.JApplet implements AssessmentListene
     return result;
   }
   
-  public void start() {
-    super.start();
+  public void start(String keyboardLayout) {
 
     if (this.promptBuffer == null) {
       // not yet started
@@ -651,9 +649,8 @@ public class MainApplet extends javax.swing.JApplet implements AssessmentListene
       this.promptHistoryBuffer = new KeyStrokeBuffer(Config.DISPLAY_BUFFER_SIZE);
       this.inputFeedbackBuffer = new KeyStrokeBuffer(Config.DISPLAY_BUFFER_SIZE);
 
-      String config = getParameter("keyboard.layout");
       //config = Util.CONFIG_LETTERS_ONLY;
-      RatedKeyStroke[] keys = Util.getKeys(config);
+      RatedKeyStroke[] keys = Util.getKeys(keyboardLayout);
       
       setMaxRating(Config.getMaxRating(keys));
       setMinRating(Config.getMinRating(keys));
