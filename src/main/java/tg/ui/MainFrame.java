@@ -645,7 +645,7 @@ public class MainFrame extends javax.swing.JFrame implements AssessmentListener 
     if (this.promptBuffer == null) {
       // not yet started
       // set up prompt buffers
-      this.promptBuffer = new KeyStrokeBuffer(Config.DISPLAY_BUFFER_SIZE);;
+      this.promptBuffer = new KeyStrokeBuffer(Config.DISPLAY_BUFFER_SIZE);
       this.promptHistoryBuffer = new KeyStrokeBuffer(Config.DISPLAY_BUFFER_SIZE);
       this.inputFeedbackBuffer = new KeyStrokeBuffer(Config.DISPLAY_BUFFER_SIZE);
 
@@ -670,11 +670,11 @@ public class MainFrame extends javax.swing.JFrame implements AssessmentListener 
       
       syncDisplay();
     }
-    else {
+//    else {
       // already started
       // just reset
       //let them do it manually...this.assessor.reset();
-    }
+//    }
   }  
   
   /**

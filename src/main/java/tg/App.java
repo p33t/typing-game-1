@@ -13,12 +13,10 @@ public class App {
         SwingUtilities.invokeLater(() -> {
             MainFrame frame = new MainFrame();
             frame.init();
+            frame.setTitle("Typing Game (by freshcode.biz)");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            // TODO: Call frame.shutdown()
-
             frame.pack();
             frame.setVisible(true);
-
             frame.start(Util.CONFIG_QWERTY);
         });
     }
