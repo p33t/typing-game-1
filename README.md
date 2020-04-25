@@ -1,6 +1,8 @@
 # typing-game-1
 A typing tutorial / trainer (old Applet implementation ported to standard Java 8).  Look for a new version in an adjacent repository.
 
+![screenshot](src/main/resources/manual/screenshot.jpg "Logo Title Text 1")
+
 # Background
 This program was initially created as a Java Applet in ~2006 to aid learning of new keyboard layouts.
 Since then it has been converted to pure Java Swing. 
